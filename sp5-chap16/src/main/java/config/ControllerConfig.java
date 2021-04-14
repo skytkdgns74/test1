@@ -1,5 +1,5 @@
 package config;
-
+//깃허브 불러오기 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
