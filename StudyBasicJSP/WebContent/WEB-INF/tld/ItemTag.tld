@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<javaee:taglib version="2.1" xmlns:javaee="http://java.sun.com/xml/ns/j2ee" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd ">
+  <description>간단한 커스텀 태그 예제</description>
+  
+  <javaee:tlib-version>1.0</javaee:tlib-version>
+  
+  <javaee:short-name>ItemTag</javaee:short-name>
+  
+  <tag>
+  		<name>item</name>
+  		<tag-class>jspbook.ch10.ItemTagHandler</tag-class>
+  		<body-content>Scriptless</body-content>
+  		<attribute>
+  			<name>border</name>
+  			<required>true</required>
+  			<rtexprvalue>true</rtexprvalue>
+  		</attribute>
+  		<attribute>
+  			<name>bgcolor</name>
+  			<required>true</required>
+  			<rtexprvalue>false</rtexprvalue>
+  		</attribute>
+  		
+  </tag>
+</javaee:taglib>

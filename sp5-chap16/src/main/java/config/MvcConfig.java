@@ -30,12 +30,14 @@ import interceptor.AuthCheckInterceptor;
 public class MvcConfig implements WebMvcConfigurer {
 
 	@Override	//DispatcherServlet의 매핑 경로를 / 로 주었을 때, JSP/HTML/CSS등을 올바르게 처리하기 위한 설정 추가.
-	public void configureDefaultServletHandling(
-			DefaultServletHandlerConfigurer configurer) {
+	public void configureDefaultServletHandling(	//configureDefaultServletHandling : DefaultServletHttpRequestHandler/SimpleUrlHandlerMapping 두 빈 객체를 추가
+			//DefaultServletHttpRequestHandler : 클라이언트의 모든 요청을 WAS가 제공하는 디폴트 서블릿에 전달.  ex) "/index.html" -> DefaultServletHttpRequestHandler -> 디폴트서블릿
+			// 디폴트 서블릿 -> SimpleUrlHandelerMapping ->모든경로 ("/**")를 DefaultServletHttp RequestHandler를 이용해서 처리
+			DefaultServletHandlerConfigurer configurer) {	//SimpleUrlHandlerMapping를 등록하는 메소드(DefaultServletHandlerConfigurer : 등록하는 우선순위 가장 낮음. 별도 설정이 없는 모든 요청경로를 디폴트 서블릿이 처리하게 된다.)
 		configurer.enable();
 	}
 
-	@Override	// JSP를 이용해서 컨트롤러의 실행 결과를 보여주기 위한 설정.
+	@Override	// JSP를 이용해서 컨트롤러의 실행 결과를 보여주기 위한 설정. view/jsp사용위해 사용
 	public void configureViewResolvers(ViewResolverRegistry registry) {
 		registry.jsp("/WEB-INF/view/", ".jsp");
 	}

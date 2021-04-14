@@ -30,15 +30,15 @@
 
 	<servlet-mapping>		<!-- 모든 요청을 DispatcherServlet이 처리하도록 서블릿 매핑 -->
 		<servlet-name>dispatcher</servlet-name>
-		<url-pattern>/</url-pattern>
+		<url-pattern>/</url-pattern> <!-- 확장자 jsp제외한 모든 요청(css,html..)을 DispatcherServlet 처리 -->
 	</servlet-mapping>
 
-	<filter>
+	<filter>	<!-- HTTP 요청 파라미터의 인코딩 처리를 위한 서블릿 필터 등록 -->
 		<filter-name>encodingFilter</filter-name>
 		<filter-class>
-			org.springframework.web.filter.CharacterEncodingFilter
+			org.springframework.web.filter.CharacterEncodingFilter	<!-- 스프링이 제공하는 인코딩 처리를 위한 필터:CharacterEncodingFilter 클래스 -->
 		</filter-class>
-		<init-param>
+		<init-param>	<!-- init~~ 인코딩 초기화 파라미터를 설정해서 HTTP 요청 파라미터를 읽어올 때 사용할 인코딩을 지정. -->
 			<param-name>encoding</param-name>
 			<param-value>UTF-8</param-value>
 		</init-param>
