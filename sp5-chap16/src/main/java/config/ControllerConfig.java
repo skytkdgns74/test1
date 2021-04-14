@@ -1,5 +1,6 @@
 package config;
-//깃허브 불러오기 
+//깃허브 업데이트 테스트 해보기
+update test
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
