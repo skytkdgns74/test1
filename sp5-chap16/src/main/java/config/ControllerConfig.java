@@ -1,5 +1,5 @@
 package config;
-//업데이트 테스트
+//업데이트 테스트2222222
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
